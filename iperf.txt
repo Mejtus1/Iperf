@@ -1,0 +1,61 @@
+--------------------------------------------------------------------------------------------------
+IPERF 
+
+- tool for measuring network bandwidth 
+
+downloaded from https://iperf.fr/iperf-download.php#windows
+2 files saved into created iperf folder in C:/ and running through cmd 
+- one is client one is server 
+
+
+--------------------------------------------------------------------------------------------------
+
+Iperf connection from client to server network bandwidth test 
+
+C:\Iperf>iperf3 -c 192.168.8.21
+Connecting to host 192.168.8.21, port 5201
+[  4] local 192.168.8.5 port 62855 connected to 192.168.8.21 port 5201
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-1.02   sec  4.12 MBytes  34.1 Mbits/sec
+[  4]   1.02-2.00   sec  4.75 MBytes  40.3 Mbits/sec
+[  4]   2.00-3.01   sec  4.50 MBytes  37.4 Mbits/sec
+[  4]   3.01-4.00   sec  4.88 MBytes  41.3 Mbits/sec
+[  4]   4.00-5.01   sec  4.88 MBytes  40.5 Mbits/sec
+[  4]   5.01-6.00   sec  5.00 MBytes  42.3 Mbits/sec
+[  4]   6.00-7.00   sec  5.00 MBytes  42.0 Mbits/sec
+[  4]   7.00-8.00   sec  4.75 MBytes  39.7 Mbits/sec
+[  4]   8.00-9.01   sec  4.62 MBytes  38.7 Mbits/sec
+[  4]   9.01-10.00  sec  4.62 MBytes  38.9 Mbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-10.00  sec  47.1 MBytes  39.5 Mbits/sec                  sender
+[  4]   0.00-10.00  sec  47.1 MBytes  39.5 Mbits/sec                  receiver
+
+--------------------------------------------------------------------------------------------------
+- testing tcp connection for 60 seconds 
+
+C:\Iperf>iperf3 -c 192.168.8.21 -t 60 -i 5
+Connecting to host 192.168.8.21, port 5201
+[  4] local 192.168.8.5 port 62863 connected to 192.168.8.21 port 5201
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-5.01   sec  24.2 MBytes  40.6 Mbits/sec
+[  4]   5.01-10.02  sec  27.2 MBytes  45.6 Mbits/sec
+[  4]  10.02-15.00  sec  28.1 MBytes  47.3 Mbits/sec
+[  4]  15.00-20.01  sec  26.9 MBytes  45.0 Mbits/sec
+[  4]  20.01-25.00  sec  28.9 MBytes  48.5 Mbits/sec
+[  4]  25.00-30.00  sec  27.8 MBytes  46.6 Mbits/sec
+[  4]  30.00-35.01  sec  27.5 MBytes  46.0 Mbits/sec
+[  4]  35.01-40.00  sec  29.8 MBytes  50.0 Mbits/sec
+[  4]  40.00-45.01  sec  27.8 MBytes  46.5 Mbits/sec
+[  4]  45.01-50.01  sec  28.4 MBytes  47.6 Mbits/sec
+[  4]  50.01-55.01  sec  27.2 MBytes  45.7 Mbits/sec
+[  4]  55.01-60.01  sec  29.9 MBytes  50.1 Mbits/sec
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bandwidth
+[  4]   0.00-60.01  sec   334 MBytes  46.6 Mbits/sec                  sender
+[  4]   0.00-60.01  sec   334 MBytes  46.6 Mbits/sec                  receiver
+
+iperf Done.
+
+--------------------------------------------------------------------------------------------------
+
